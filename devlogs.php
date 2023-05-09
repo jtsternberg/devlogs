@@ -32,9 +32,10 @@ define( 'DEVLOGS_VERSION', '1.0.0' );
 define( 'DEVLOGS_FILE', __FILE__ );
 define( 'DEVLOGS_PATH', __DIR__ );
 
+require 'vendor/autoload.php';
+
 // Load the class.
 function includeDevLogs() {
-   require_once DEVLOGS_PATH . 'src/class-devlogs.php';
    add_action( 'init', '\Jsternberg\DevLogs::init' );
 }
 add_action( 'plugins_loaded', 'includeDevLogs' );
