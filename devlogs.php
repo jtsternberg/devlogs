@@ -36,7 +36,6 @@ require 'vendor/autoload.php';
 
 // Load the class.
 function includeDevLogs() {
-   add_action( 'init', '\Jsternberg\DevLogs::init' );
+	add_action( 'init', [ 'Jtsternberg\\DevLogs\\DevLogs', 'init' ], 1 );
 }
 add_action( 'plugins_loaded', 'includeDevLogs' );
-

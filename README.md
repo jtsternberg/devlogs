@@ -11,3 +11,5 @@ add_action( 'current_screen', function( $screen ) {
 
 ### Viewing logs
 Post-type url: `<admin_url>/edit.php?post_type=devlogs`
+
+![Screenshot](./.github/screenshot.png)

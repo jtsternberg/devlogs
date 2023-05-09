@@ -1,5 +1,5 @@
 <?php
-namespace Jsternberg;
+namespace Jtsternberg\DevLogs;
 
 /**
  * Class DevLogs
@@ -140,13 +140,10 @@ class DevLogs {
 	 */
 	public static function canLog( $loggerName ) {
 		$env    = function_exists( 'wp_get_environment_type' ) ? wp_get_environment_type() : 'production';
-		$canLog = defined( 'OM_DEVLOG_ENABLED' ) || 'production' !== $env;
-		if ( $canLog ) {
-
-			// Nope.
-			if ( empty( OM_DEVLOG_ENABLED ) ) {
-				$canLog = false;
-			} elseif ( is_string( OM_DEVLOG_ENABLED ) ) {
+		$canLog = 'production' !== $env;
+		if ( defined( 'OM_DEVLOG_ENABLED' ) ) {
+			$canLog = ! empty( OM_DEVLOG_ENABLED );
+			if ( is_string( OM_DEVLOG_ENABLED ) ) {
 				$canLog = $loggerName === OM_DEVLOG_ENABLED;
 			}
 		}

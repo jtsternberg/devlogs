@@ -3,7 +3,7 @@
     "description": "A post-type Logger/debugger",
     "autoload": {
         "psr-4": {
-            "Jtsternberg\\Devlogs\\": "src/"
+            "Jtsternberg\\DevLogs\\": "src/"
         }
     },
     "authors": [
